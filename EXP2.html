@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balance App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 id="balance">$0</h1>
+      <button class="btn deposit" onclick="deposit()">Deposit</button>
+      <button class="btn withdraw" onclick="withdraw()">Withdraw</button>
+    </div>
+  </div>
+
+  <script>
+    let balance = 0;
+
+    function updateBalance() {
+      document.getElementById("balance").textContent = `$${balance}`;
+    }
+
+    function deposit() {
+      balance += 10;
+      updateBalance();
+    }
+
+    function withdraw() {
+      if (balance >= 10) {
+        balance -= 10;
+        updateBalance();
+      }
+    }
+  </script>
+</body>
+</html>
